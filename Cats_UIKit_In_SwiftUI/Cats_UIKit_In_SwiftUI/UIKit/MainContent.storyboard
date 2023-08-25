@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Content View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="MainContent" id="Y6W-OH-hqX" customClass="MainContentViewController" customModule="Cats_UIKit_In_SwiftUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jF2-Z6-g0h">
+                                <rect key="frame" x="133" y="783" width="127" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Load Content"/>
+                                <connections>
+                                    <action selector="loadData:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dhV-hU-J6K"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="145" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cSV-6U-4TT">
+                                <rect key="frame" x="16" y="59" width="361" height="716"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CatCell" rowHeight="145" id="cbu-hb-Tja" customClass="CatTableViewCellController" customModule="Cats_UIKit_In_SwiftUI" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="361" height="145"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cbu-hb-Tja" id="rrq-yL-IVs">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="145"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oul-Lw-via">
+                                                    <rect key="frame" x="20" y="11" width="45" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qsk-ai-TSg">
+                                                    <rect key="frame" x="20" y="40" width="38" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="mjz-vN-BSB">
+                                                    <rect key="frame" x="285" y="66" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SW1-vA-6nh" customClass="AsyncUIImageView" customModule="Cats_UIKit_In_SwiftUI" customModuleProvider="target">
+                                                    <rect key="frame" x="238" y="11" width="123" height="123"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="123" id="0do-jS-Jwy"/>
+                                                        <constraint firstAttribute="height" constant="123" id="re2-rp-6N0"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="qsk-ai-TSg" firstAttribute="leading" secondItem="rrq-yL-IVs" secondAttribute="leadingMargin" id="4Q7-8Z-VkY"/>
+                                                <constraint firstItem="qsk-ai-TSg" firstAttribute="top" secondItem="oul-Lw-via" secondAttribute="bottom" constant="8" symbolic="YES" id="807-Mg-7X4"/>
+                                                <constraint firstAttribute="bottom" secondItem="SW1-vA-6nh" secondAttribute="bottom" constant="11" id="Ckh-bS-Jb5"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="mjz-vN-BSB" secondAttribute="trailing" constant="36" id="EMG-xD-2lS"/>
+                                                <constraint firstAttribute="trailing" secondItem="SW1-vA-6nh" secondAttribute="trailing" id="HXX-WE-SPo"/>
+                                                <constraint firstItem="oul-Lw-via" firstAttribute="top" secondItem="rrq-yL-IVs" secondAttribute="topMargin" id="J13-oQ-4jU"/>
+                                                <constraint firstItem="oul-Lw-via" firstAttribute="leading" secondItem="rrq-yL-IVs" secondAttribute="leadingMargin" id="RCt-Gf-NKn"/>
+                                                <constraint firstItem="SW1-vA-6nh" firstAttribute="top" secondItem="rrq-yL-IVs" secondAttribute="top" constant="11" id="UZV-VZ-B7g"/>
+                                                <constraint firstItem="mjz-vN-BSB" firstAttribute="top" secondItem="rrq-yL-IVs" secondAttribute="topMargin" constant="55" id="t8X-S4-xoe"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="activitySpinner" destination="mjz-vN-BSB" id="sqA-QC-fBW"/>
+                                            <outlet property="catImage" destination="SW1-vA-6nh" id="UOd-yU-jZy"/>
+                                            <outlet property="name" destination="oul-Lw-via" id="Qgt-Vt-7Tp"/>
+                                            <outlet property="type" destination="qsk-ai-TSg" id="fK0-UQ-hlD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Y6W-OH-hqX" id="xWY-iS-gnj"/>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="zg2-Cr-jBY"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="jF2-Z6-g0h" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="133" id="9hV-f4-rl3"/>
+                            <constraint firstItem="jF2-Z6-g0h" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="K3a-vr-uYv"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="jF2-Z6-g0h" secondAttribute="trailing" constant="133" id="NWL-W3-MI9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="itemList" destination="cSV-6U-4TT" id="hce-uI-J5j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20.610687022900763" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
